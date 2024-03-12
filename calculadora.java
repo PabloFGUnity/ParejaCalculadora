@@ -1,41 +1,51 @@
 import java.util.Scanner;
 
-public class calculadora {
+public class Calculadora {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Ingrese el primer número:");
-        double num1 = scanner.nextDouble();
-        
-        System.out.println("Ingrese el segundo número:");
-        double num2 = scanner.nextDouble();
-        
-        double suma = num1 + num2;
-        double resta = num1 - num2;
-        double multiplicacion = num1 * num2;
-        
+        boolean salir = false;
 
-        double division = 0;
-        if (num2 != 0) {
-            division = num1 / num2;
-        } else {
-            System.out.println("No se puede dividir por cero.");
+        while (!salir) {
+            System.out.println("Seleccione la operación que desea realizar:");
+            System.out.println("1. Suma");
+            System.out.println("2. Resta");
+            System.out.println("3. Multiplicación");
+            System.out.println("4. División");
+            System.out.println("5. Potenciación");
+            System.out.println("6. Raíz Cuadrada");
+            System.out.println("7. Salir");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Ingrese el primer número:");
+                    double num1 = scanner.nextDouble();
+                    System.out.println("Ingrese el segundo número:");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("La suma es: " + (num1 + num2));
+                    break;
+                case 2:
+                    // Código para la resta
+                    break;
+                case 3:
+                    // Código para la multiplicación
+                    break;
+                case 4:
+                    // Código para la división
+                    break;
+                case 5:
+                    // Código para la potenciación
+                    break;
+                case 6:
+                    // Código para la raíz cuadrada
+                    break;
+                case 7:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+            }
         }
-        
-        System.out.println("Ingrese la longitud del primer cateto del triángulo:");
-        double cateto1 = scanner.nextDouble();
-        
-        System.out.println("Ingrese la longitud del segundo cateto del triángulo:");
-        double cateto2 = scanner.nextDouble();
-        
-        double hipotenusa = Math.sqrt(cateto1 * cateto1 + cateto2 * cateto2);
-        
-        System.out.println("La suma de " + num1 + " y " + num2 + " es: " + suma);
-        System.out.println("La resta de " + num1 + " y " + num2 + " es: " + resta);
-        System.out.println("La multiplicación de " + num1 + " y " + num2 + " es: " + multiplicacion);
-        System.out.println("La división de " + num1 + " entre " + num2 + " es: " + division);
-        System.out.println("La hipotenusa del triángulo con catetos de longitud " + cateto1 + " y " + cateto2 + " es: " + hipotenusa);
-        
-        scanner.close();
     }
 }
